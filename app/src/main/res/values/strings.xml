@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GameZone</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="email_hint">Correo (@duoc.cl)</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_prompt">¿No tienes cuenta? Regístrate aquí</string>
+    
+    <string name="register_title">Registro de Usuario</string>
+    <string name="name_hint">Nombre Completo</string>
+    <string name="confirm_password_hint">Confirmar Contraseña</string>
+    <string name="phone_hint">Teléfono (Opcional)</string>
+    <string name="register_button">Registrar</string>
+    
+    <string name="genres_label">Géneros Favoritos</string>
+    <string name="genre_fiction">Ficción</string>
+    <string name="genre_non_fiction">No Ficción</string>
+    <string name="genre_mystery">Misterio</string>
+    <string name="genre_horror">Terror</string>
+    <string name="genre_suspense">Suspenso</string>
+    <string name="genre_history">Historia</string>
+
+    <string name="error_empty_field">Este campo no puede estar vacío</string>
+    <string name="error_invalid_email">El correo debe ser @duoc.cl</string>
+    <string name="error_password_length">Mínimo 10 caracteres</string>
+    <string name="error_password_uppercase">Falta una mayúscula</string>
+    <string name="error_password_lowercase">Falta una minúscula</string>
+    <string name="error_password_digit">Falta un número</string>
+    <string name="error_password_special">Falta un carácter especial (@#$%)</string>
+    <string name="error_password_mismatch">Las contraseñas no coinciden</string>
+    <string name="error_genre_selection">Selecciona al menos un género</string>
+</resources>

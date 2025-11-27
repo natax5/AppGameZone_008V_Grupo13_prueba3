@@ -1,0 +1,39 @@
+com.example.gamezone.app-profileinstaller-1.3.0-0 C:\Users\revec\.gradle\caches\transforms-4\0a4ce01b44445bbc31d2d97964ba99fe\transformed\profileinstaller-1.3.0\res
+com.example.gamezone.app-savedstate-1.2.1-1 C:\Users\revec\.gradle\caches\transforms-4\0c5bcac1c35e5adc2c45906c9512d467\transformed\savedstate-1.2.1\res
+com.example.gamezone.app-transition-1.2.0-2 C:\Users\revec\.gradle\caches\transforms-4\186a64a18b9ffec852d5cfebe098ad19\transformed\transition-1.2.0\res
+com.example.gamezone.app-lifecycle-runtime-2.6.2-3 C:\Users\revec\.gradle\caches\transforms-4\1a4685e2cbd0996ff1b9efe267cea580\transformed\lifecycle-runtime-2.6.2\res
+com.example.gamezone.app-startup-runtime-1.1.1-4 C:\Users\revec\.gradle\caches\transforms-4\1de9aa3b66ea10b695e4bc9a0c6c30bb\transformed\startup-runtime-1.1.1\res
+com.example.gamezone.app-annotation-experimental-1.3.0-5 C:\Users\revec\.gradle\caches\transforms-4\1fbe24aa2e988e1d1964e3ad3e857ec0\transformed\annotation-experimental-1.3.0\res
+com.example.gamezone.app-room-ktx-2.6.1-6 C:\Users\revec\.gradle\caches\transforms-4\29a25b8e146653ac21718a13d9c258a5\transformed\room-ktx-2.6.1\res
+com.example.gamezone.app-cardview-1.0.0-7 C:\Users\revec\.gradle\caches\transforms-4\2bd321dc628a4a74f8c60c820c8938e7\transformed\cardview-1.0.0\res
+com.example.gamezone.app-activity-1.8.0-8 C:\Users\revec\.gradle\caches\transforms-4\34ed3511747fbf199bf54dc941e163c4\transformed\activity-1.8.0\res
+com.example.gamezone.app-recyclerview-1.1.0-9 C:\Users\revec\.gradle\caches\transforms-4\392fa4004d4918940d188f922a22063a\transformed\recyclerview-1.1.0\res
+com.example.gamezone.app-material-1.11.0-10 C:\Users\revec\.gradle\caches\transforms-4\498d5f2d2c42e4fbda89ff9b3977d8f7\transformed\material-1.11.0\res
+com.example.gamezone.app-appcompat-1.6.1-11 C:\Users\revec\.gradle\caches\transforms-4\54d6d2e9ca6f8110100bc5cab31c7022\transformed\appcompat-1.6.1\res
+com.example.gamezone.app-core-ktx-1.12.0-12 C:\Users\revec\.gradle\caches\transforms-4\6e2cb612d8703af6fa46128c7272bc7a\transformed\core-ktx-1.12.0\res
+com.example.gamezone.app-lifecycle-livedata-core-2.6.2-13 C:\Users\revec\.gradle\caches\transforms-4\73b8556cdc4551c0ebe835908753ffa9\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.gamezone.app-coordinatorlayout-1.1.0-14 C:\Users\revec\.gradle\caches\transforms-4\828e60be3d3bdf82c4bd0bcb38db4012\transformed\coordinatorlayout-1.1.0\res
+com.example.gamezone.app-emoji2-views-helper-1.2.0-15 C:\Users\revec\.gradle\caches\transforms-4\855ddce77bbccb80ba9bfa726482dfcc\transformed\emoji2-views-helper-1.2.0\res
+com.example.gamezone.app-viewpager2-1.0.0-16 C:\Users\revec\.gradle\caches\transforms-4\859b79e2cf0710353a239811063d6d91\transformed\viewpager2-1.0.0\res
+com.example.gamezone.app-lifecycle-livedata-2.6.2-17 C:\Users\revec\.gradle\caches\transforms-4\8a6bbe8bd0235438d0ba1491fb58a8a3\transformed\lifecycle-livedata-2.6.2\res
+com.example.gamezone.app-lifecycle-viewmodel-2.6.2-18 C:\Users\revec\.gradle\caches\transforms-4\8a77614c7efb35deabb4b3b6c7c8a276\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.gamezone.app-appcompat-resources-1.6.1-19 C:\Users\revec\.gradle\caches\transforms-4\8af5891eb51b2ac31aeac0958648d780\transformed\appcompat-resources-1.6.1\res
+com.example.gamezone.app-lifecycle-process-2.6.2-20 C:\Users\revec\.gradle\caches\transforms-4\a115b1be096d19c98173cdd43c7d0791\transformed\lifecycle-process-2.6.2\res
+com.example.gamezone.app-room-runtime-2.6.1-21 C:\Users\revec\.gradle\caches\transforms-4\a4cad5c3801611500acaf6e2865f98cc\transformed\room-runtime-2.6.1\res
+com.example.gamezone.app-emoji2-1.2.0-22 C:\Users\revec\.gradle\caches\transforms-4\aaabb304fec17d460450165dc9c5873e\transformed\emoji2-1.2.0\res
+com.example.gamezone.app-core-1.12.0-23 C:\Users\revec\.gradle\caches\transforms-4\b28941382d16a92bbd164a96d15f97d1\transformed\core-1.12.0\res
+com.example.gamezone.app-drawerlayout-1.1.1-24 C:\Users\revec\.gradle\caches\transforms-4\b43179875298c669605c8873a11db922\transformed\drawerlayout-1.1.1\res
+com.example.gamezone.app-lifecycle-runtime-ktx-2.6.2-25 C:\Users\revec\.gradle\caches\transforms-4\b749011372a8ca1b922076beb5926987\transformed\lifecycle-runtime-ktx-2.6.2\res
+com.example.gamezone.app-sqlite-framework-2.4.0-26 C:\Users\revec\.gradle\caches\transforms-4\d0300c77827e145dec84de79cbf75c45\transformed\sqlite-framework-2.4.0\res
+com.example.gamezone.app-core-runtime-2.2.0-27 C:\Users\revec\.gradle\caches\transforms-4\e2d0ccb2dc4ccee61c6ab05e9091ab0c\transformed\core-runtime-2.2.0\res
+com.example.gamezone.app-sqlite-2.4.0-28 C:\Users\revec\.gradle\caches\transforms-4\e34f95e928cbaa7df3ec770ac515395b\transformed\sqlite-2.4.0\res
+com.example.gamezone.app-lifecycle-viewmodel-savedstate-2.6.2-29 C:\Users\revec\.gradle\caches\transforms-4\e418edefd589dccabf6053a263dccef6\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.gamezone.app-fragment-1.3.6-30 C:\Users\revec\.gradle\caches\transforms-4\e98f6b5afc93da0d35aaa88c99e9180e\transformed\fragment-1.3.6\res
+com.example.gamezone.app-constraintlayout-2.1.4-31 C:\Users\revec\.gradle\caches\transforms-4\f9fa270dcda2d17ae1a6dfe3994b9450\transformed\constraintlayout-2.1.4\res
+com.example.gamezone.app-pngs-32 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\build\generated\res\pngs\debug
+com.example.gamezone.app-resValues-33 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\build\generated\res\resValues\debug
+com.example.gamezone.app-packageDebugResources-34 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.gamezone.app-packageDebugResources-35 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.gamezone.app-merged_res-36 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\build\intermediates\merged_res\debug
+com.example.gamezone.app-debug-37 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\src\debug\res
+com.example.gamezone.app-main-38 C:\Users\revec\OneDrive\Escritorio\prueba 3\app\src\main\res

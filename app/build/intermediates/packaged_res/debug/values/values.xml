@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="gray_light">#F0F0F0</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">GameZone</string>
+    <string name="confirm_password_hint">Confirmar Contraseña</string>
+    <string name="email_hint">Correo (@duoc.cl)</string>
+    <string name="error_empty_field">Este campo no puede estar vacío</string>
+    <string name="error_genre_selection">Selecciona al menos un género</string>
+    <string name="error_invalid_email">El correo debe ser @duoc.cl</string>
+    <string name="error_password_digit">Falta un número</string>
+    <string name="error_password_length">Mínimo 10 caracteres</string>
+    <string name="error_password_lowercase">Falta una minúscula</string>
+    <string name="error_password_mismatch">Las contraseñas no coinciden</string>
+    <string name="error_password_special">Falta un carácter especial (@#$%)</string>
+    <string name="error_password_uppercase">Falta una mayúscula</string>
+    <string name="genre_fiction">Ficción</string>
+    <string name="genre_history">Historia</string>
+    <string name="genre_horror">Terror</string>
+    <string name="genre_mystery">Misterio</string>
+    <string name="genre_non_fiction">No Ficción</string>
+    <string name="genre_suspense">Suspenso</string>
+    <string name="genres_label">Géneros Favoritos</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="name_hint">Nombre Completo</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="phone_hint">Teléfono (Opcional)</string>
+    <string name="register_button">Registrar</string>
+    <string name="register_prompt">¿No tienes cuenta? Regístrate aquí</string>
+    <string name="register_title">Registro de Usuario</string>
+    <style name="Theme.GameZone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>
