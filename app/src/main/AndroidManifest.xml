@@ -26,7 +26,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".GameDetailActivity" /> <!-- Agregada la nueva Activity -->
+        <activity android:name=".GameDetailActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".UserManagementActivity" /> <!-- Agregada la nueva Activity -->
     </application>
 
 </manifest>

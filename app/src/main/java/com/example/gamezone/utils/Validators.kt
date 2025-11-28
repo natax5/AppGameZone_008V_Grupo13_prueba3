@@ -5,9 +5,14 @@ import java.util.regex.Pattern
 
 object Validators {
 
+    // Se permite @duoc.cl (Clientes) y @admin.cl (Administradores)
     fun isValidEmail(email: String): Boolean {
         return if (email.contains("@")) {
-            Patterns.EMAIL_ADDRESS.matcher(email).matches() && email.endsWith("@duoc.cl") && email.length <= 60
+            val isValidFormat = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+            val isAllowedDomain = email.endsWith("@duoc.cl") || email.endsWith("@admin.cl")
+            val isValidLength = email.length <= 60
+            
+            isValidFormat && isAllowedDomain && isValidLength
         } else {
             false
         }

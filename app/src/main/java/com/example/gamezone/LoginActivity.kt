@@ -43,6 +43,10 @@ class LoginActivity : AppCompatActivity() {
                         val user = responseBody.user
                         
                         if (user != null) {
+                            // Determinar rol
+                            val isAdmin = user.email.endsWith("@admin.cl")
+                            val roleName = if (isAdmin) "Administrador" else "Cliente"
+
                             // Guardar sesión en SharedPreferences
                             val prefs = getSharedPreferences("GameZonePrefs", Context.MODE_PRIVATE)
                             val editor = prefs.edit()
@@ -51,9 +55,10 @@ class LoginActivity : AppCompatActivity() {
                             editor.putString("USER_EMAIL", user.email)
                             editor.putString("USER_PHONE", user.phone ?: "")
                             editor.putString("USER_GENRES", user.genres ?: "")
+                            editor.putBoolean("IS_ADMIN", isAdmin) // Guardamos el rol
                             editor.apply()
 
-                            Toast.makeText(this@LoginActivity, "Bienvenido, ${user.fullName}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@LoginActivity, "Bienvenido $roleName, ${user.fullName}", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()
                         } else {

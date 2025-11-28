@@ -55,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             if (!Validators.isValidEmail(email)) {
-                etEmail.error = "Debe ser un correo válido @duoc.cl (máx 60)"
+                etEmail.error = "Debe ser un correo válido @duoc.cl o @admin.cl (máx 60)"
                 return@setOnClickListener
             }
 

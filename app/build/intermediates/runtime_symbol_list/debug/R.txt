@@ -3151,6 +3151,7 @@ int id action_text 0x7f080043
 int id actions 0x7f080044
 int id activity_chooser_view_content 0x7f080045
 int id add 0x7f080046
+int id adminPanelContainer 0x7f08021a
 int id alertTitle 0x7f080047
 int id aligned 0x7f080048
 int id all 0x7f080049
@@ -3178,9 +3179,13 @@ int id bounce 0x7f08005e
 int id bounceBoth 0x7f08005f
 int id bounceEnd 0x7f080060
 int id bounceStart 0x7f080061
+int id btnAddGame 0x7f08021b
+int id btnAdminPanel 0x7f08021c
 int id btnBack 0x7f08020d
 int id btnDelete 0x7f080204
+int id btnDeleteUser 0x7f08021f
 int id btnLogin 0x7f080062
+int id btnManageUsers 0x7f08021d
 int id btnProfile 0x7f080205
 int id btnRegister 0x7f080063
 int id btnUpdate 0x7f080206
@@ -3477,6 +3482,7 @@ int id right_side 0x7f08017a
 int id rounded 0x7f08017b
 int id row_index_key 0x7f08017c
 int id rvGames 0x7f08017d
+int id rvUsers 0x7f08021e
 int id save_non_transition_alpha 0x7f08017e
 int id save_overlay_view 0x7f08017f
 int id sawtooth 0x7f080180
@@ -3593,6 +3599,9 @@ int id tvGameDescription 0x7f0801e9
 int id tvGameGenre 0x7f08020c
 int id tvGameTitle 0x7f0801ea
 int id tvRegister 0x7f0801eb
+int id tvUserEmail 0x7f080220
+int id tvUserName 0x7f080221
+int id tvUserRole 0x7f080222
 int id tvWelcome 0x7f0801ec
 int id unchecked 0x7f0801ed
 int id uniform 0x7f0801ee
@@ -3731,11 +3740,13 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_admin 0x7f0b0071
 int layout activity_game_detail 0x7f0b0070
 int layout activity_login 0x7f0b001c
 int layout activity_main 0x7f0b001d
 int layout activity_profile 0x7f0b006f
 int layout activity_register 0x7f0b001e
+int layout activity_user_management 0x7f0b0072
 int layout custom_dialog 0x7f0b001f
 int layout design_bottom_navigation_item 0x7f0b0020
 int layout design_bottom_sheet_dialog 0x7f0b0021
@@ -3755,6 +3766,7 @@ int layout design_text_input_start_icon 0x7f0b002e
 int layout ime_base_split_test_activity 0x7f0b002f
 int layout ime_secondary_split_test_activity 0x7f0b0030
 int layout item_game 0x7f0b0031
+int layout item_user_admin 0x7f0b0073
 int layout m3_alert_dialog 0x7f0b0032
 int layout m3_alert_dialog_actions 0x7f0b0033
 int layout m3_alert_dialog_title 0x7f0b0034

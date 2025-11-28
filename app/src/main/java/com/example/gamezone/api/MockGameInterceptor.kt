@@ -5,15 +5,16 @@ import okhttp3.MediaType
 import okhttp3.Protocol
 import okhttp3.Response
 import okhttp3.ResponseBody
+import org.json.JSONArray
+import org.json.JSONObject
 
 class MockGameInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        val uri = chain.request().url().uri().toString()
-        
-        if (uri.contains("games")) {
-            // JSON gigante con juegos variados y coherentes
-            val jsonResponse = """
-                [
+    
+    companion object {
+        // Juegos almacenados en memoria estática para que los cambios del admin persistan durante la sesión
+        // Inicializamos con los juegos por defecto
+        val gamesList = JSONArray("""
+            [
                   {
                     "id": 1,
                     "title": "God of War: Ragnarok",
@@ -106,7 +107,7 @@ class MockGameInterceptor : Interceptor {
                     "id": 9,
                     "title": "Left 4 Dead 2",
                     "short_description": "Apocalipsis Zombie Cooperativo.",
-                    "description": "Ambientado en el apocalipsis zombie, Left 4 Dead 2 (L4D2) es la muy esperada secuela del galardonado Left 4 Dead, el juego cooperativo n.º 1 de 2008.",
+                    "description": "Ambientado en el apocalipsis zombie, Left 4 Dead 2 (L4D2) is la muy esperada secuela del galardonado Left 4 Dead, el juego cooperativo n.º 1 de 2008.",
                     "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/header.jpg",
                     "genre": "Zombie",
                     "platform": "PC",
@@ -190,8 +191,49 @@ class MockGameInterceptor : Interceptor {
                     "developer": "Asobo Studio",
                     "release_date": "2020-08-18"
                   }
-                ]
-            """
+            ]
+        """)
+    }
+
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val request = chain.request()
+        val uri = request.url().uri().toString()
+        val method = request.method()
+        
+        if (uri.contains("games")) {
+            
+            // Simulamos agregar un juego nuevo si es POST (solo para Admins)
+            if (method == "POST") {
+                 val jsonResponse = """
+                    { "message": "Juego agregado exitosamente" }
+                """
+                
+                // No podemos leer el body y parsearlo fácilmente aquí sin librerías externas complejas
+                // Pero simularemos que se agregó uno genérico para efectos de la demo
+                val newGame = JSONObject().apply {
+                    put("id", gamesList.length() + 1)
+                    put("title", "Nuevo Juego Agregado")
+                    put("short_description", "Juego agregado por el administrador.")
+                    put("description", "Este es un juego de prueba agregado desde el panel de administración.")
+                    put("thumbnail", "https://via.placeholder.com/300")
+                    put("genre", "Action")
+                    put("platform", "PC")
+                    put("developer", "Admin")
+                    put("release_date", "2023-11-27")
+                }
+                gamesList.put(newGame)
+                
+                return Response.Builder()
+                    .code(201)
+                    .message(jsonResponse)
+                    .request(chain.request())
+                    .protocol(Protocol.HTTP_1_1)
+                    .body(ResponseBody.create(MediaType.parse("application/json"), jsonResponse.toByteArray()))
+                    .build()
+            }
+            
+            // GET normal retorna la lista (que puede haber crecido)
+            val jsonResponse = gamesList.toString()
             
             return Response.Builder()
                 .code(200)

@@ -22,6 +22,12 @@ public final class ActivityMainBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout adminPanelContainer;
+
+  @NonNull
+  public final Button btnAdminPanel;
+
+  @NonNull
   public final Button btnBack;
 
   @NonNull
@@ -33,9 +39,13 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvWelcome;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView, @NonNull Button btnBack,
-      @NonNull Button btnProfile, @NonNull RecyclerView rvGames, @NonNull TextView tvWelcome) {
+  private ActivityMainBinding(@NonNull LinearLayout rootView,
+      @NonNull LinearLayout adminPanelContainer, @NonNull Button btnAdminPanel,
+      @NonNull Button btnBack, @NonNull Button btnProfile, @NonNull RecyclerView rvGames,
+      @NonNull TextView tvWelcome) {
     this.rootView = rootView;
+    this.adminPanelContainer = adminPanelContainer;
+    this.btnAdminPanel = btnAdminPanel;
     this.btnBack = btnBack;
     this.btnProfile = btnProfile;
     this.rvGames = rvGames;
@@ -69,6 +79,18 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.adminPanelContainer;
+      LinearLayout adminPanelContainer = ViewBindings.findChildViewById(rootView, id);
+      if (adminPanelContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.btnAdminPanel;
+      Button btnAdminPanel = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdminPanel == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       Button btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
@@ -93,8 +115,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, btnBack, btnProfile, rvGames,
-          tvWelcome);
+      return new ActivityMainBinding((LinearLayout) rootView, adminPanelContainer, btnAdminPanel,
+          btnBack, btnProfile, rvGames, tvWelcome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

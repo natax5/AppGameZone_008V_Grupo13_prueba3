@@ -6,9 +6,11 @@ import com.example.gamezone.models.RegisterRequest
 import com.example.gamezone.models.RegisterResponse
 import com.example.gamezone.models.UpdateUserRequest
 import com.example.gamezone.models.UpdateUserResponse
+import com.example.gamezone.models.UserData
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Path
@@ -25,4 +27,8 @@ interface AuthApi {
 
     @DELETE("users/{id}")
     fun deleteUser(@Path("id") userId: Int): Call<Void>
+
+    // Nuevo método para obtener todos los usuarios (Admin)
+    @GET("users")
+    fun getAllUsers(): Call<List<UserData>>
 }

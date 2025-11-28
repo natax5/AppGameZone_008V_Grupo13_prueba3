@@ -46,10 +46,35 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"/>
     </LinearLayout>
 
+    <!-- Contenedor de Admin (oculto por defecto) -->
+    <LinearLayout
+        android:id="@+id/adminPanelContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#E3F2FD"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panel de Administrador"
+            android:textStyle="bold"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="8dp"/>
+            
+        <Button
+            android:id="@+id/btnAdminPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ir al Panel de Gestión"/>
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Juegos Destacados (FreeToGame API)"
+        android:text="Juegos Destacados"
         android:textSize="18sp"
         android:textStyle="bold"
         android:padding="16dp"
