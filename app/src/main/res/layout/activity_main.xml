@@ -1,90 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#F5F5F5">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp">
-        
-        <!-- Botón Volver (Logout) -->
-        <Button
-            android:id="@+id/btnBack"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🡐"
-            android:textColor="@android:color/white"
-            android:minWidth="48dp"
-            android:padding="0dp"
-            android:layout_marginEnd="8dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvWelcome"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="GameZone"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
-            
-        <Button
-            android:id="@+id/btnProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mi Perfil"
-            android:textColor="@color/colorPrimary"
-            android:backgroundTint="@android:color/white"
-            style="@style/Widget.MaterialComponents.Button.TextButton"/>
-    </LinearLayout>
-
-    <!-- Contenedor de Admin (oculto por defecto) -->
-    <LinearLayout
-        android:id="@+id/adminPanelContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#E3F2FD"
-        android:visibility="gone">
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Panel de Administrador"
-            android:textStyle="bold"
-            android:textColor="#1565C0"
-            android:layout_marginBottom="8dp"/>
-            
-        <Button
-            android:id="@+id/btnAdminPanel"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ir al Panel de Gestión"/>
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp">
+            
+            <Button
+                android:id="@+id/btnBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🡐"
+                android:textColor="@android:color/white"
+                android:minWidth="48dp"
+                android:padding="0dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="GameZone"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"/>
+                
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mi Perfil"
+                android:textColor="@color/colorPrimary"
+                android:backgroundTint="@android:color/white"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/adminPanelContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#E3F2FD"
+            android:visibility="gone">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Panel de Administrador"
+                android:textStyle="bold"
+                android:textColor="#1565C0"
+                android:layout_marginBottom="8dp"/>
+                
+            <Button
+                android:id="@+id/btnAdminPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ir al Panel de Gestión"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Juegos Destacados"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:textColor="#333333"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGames"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp"/> <!-- Padding extra para no tapar con FAB -->
+
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Juegos Destacados"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:textColor="#333333"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="24dp"
+        android:src="@android:drawable/ic_menu_view" 
+        app:backgroundTint="@color/colorPrimary"
+        android:contentDescription="Ver Carrito" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGames"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingBottom="16dp"/>
-
-</LinearLayout>
+</RelativeLayout>

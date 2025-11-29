@@ -8,13 +8,12 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.gamezone.api.ApiClient
-import com.example.gamezone.models.UserData
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.gamezone.db.AppDatabase
+import com.example.gamezone.db.User
+import kotlinx.coroutines.launch
 
 class UserManagementActivity : AppCompatActivity() {
     private lateinit var rvUsers: RecyclerView
@@ -34,24 +33,15 @@ class UserManagementActivity : AppCompatActivity() {
     }
 
     private fun loadUsers() {
-        ApiClient.instance.getAllUsers().enqueue(object : Callback<List<UserData>> {
-            override fun onResponse(call: Call<List<UserData>>, response: Response<List<UserData>>) {
-                if (response.isSuccessful) {
-                    val users = response.body() ?: emptyList()
-                    rvUsers.adapter = UsersAdapter(users.toMutableList())
-                } else {
-                    Toast.makeText(this@UserManagementActivity, "Error al cargar usuarios", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<List<UserData>>, t: Throwable) {
-                Toast.makeText(this@UserManagementActivity, "Error de red", Toast.LENGTH_SHORT).show()
-            }
-        })
+        lifecycleScope.launch {
+            val db = AppDatabase.getDatabase(applicationContext)
+            val users = db.userDao().getAllUsers()
+            rvUsers.adapter = UsersAdapter(users.toMutableList())
+        }
     }
 
     // Adaptador Interno con botón de eliminar
-    inner class UsersAdapter(private val users: MutableList<UserData>) : RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
+    inner class UsersAdapter(private val users: MutableList<User>) : RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
         
         inner class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val name: TextView = view.findViewById(R.id.tvUserName)
@@ -75,23 +65,15 @@ class UserManagementActivity : AppCompatActivity() {
             holder.role.text = "Rol: $role"
 
             holder.btnDelete.setOnClickListener {
-                // Llamar al API para borrar
-                ApiClient.instance.deleteUser(user.id).enqueue(object : Callback<Void> {
-                    override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                        if (response.isSuccessful) {
-                            Toast.makeText(this@UserManagementActivity, "Usuario eliminado", Toast.LENGTH_SHORT).show()
-                            // Remover de la lista local y notificar al adaptador
-                            users.removeAt(holder.adapterPosition)
-                            notifyItemRemoved(holder.adapterPosition)
-                        } else {
-                            Toast.makeText(this@UserManagementActivity, "Error al eliminar", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Void>, t: Throwable) {
-                        Toast.makeText(this@UserManagementActivity, "Error de red", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                lifecycleScope.launch {
+                    val db = AppDatabase.getDatabase(applicationContext)
+                    db.userDao().deleteUser(user.id)
+                    
+                    Toast.makeText(this@UserManagementActivity, "Usuario eliminado", Toast.LENGTH_SHORT).show()
+                    users.removeAt(holder.adapterPosition)
+                    notifyItemRemoved(holder.adapterPosition)
+                    notifyItemRangeChanged(holder.adapterPosition, users.size)
+                }
             }
         }
 

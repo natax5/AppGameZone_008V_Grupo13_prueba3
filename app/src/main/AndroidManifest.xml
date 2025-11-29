@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gamezone">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -28,7 +29,9 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".GameDetailActivity" />
         <activity android:name=".AdminActivity" />
-        <activity android:name=".UserManagementActivity" /> <!-- Agregada la nueva Activity -->
+        <activity android:name=".UserManagementActivity" />
+        <activity android:name=".AddGameActivity" />
+        <activity android:name=".CartActivity" /> <!-- Agregada la nueva Activity -->
     </application>
 
 </manifest>

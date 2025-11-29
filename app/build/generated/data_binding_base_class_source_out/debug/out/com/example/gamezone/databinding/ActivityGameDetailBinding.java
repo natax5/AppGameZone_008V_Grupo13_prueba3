@@ -22,7 +22,19 @@ public final class ActivityGameDetailBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final Button btnAddToCart;
+
+  @NonNull
   public final Button btnBack;
+
+  @NonNull
+  public final Button btnDecreaseQty;
+
+  @NonNull
+  public final Button btnEditGame;
+
+  @NonNull
+  public final Button btnIncreaseQty;
 
   @NonNull
   public final ImageView ivDetailImage;
@@ -40,20 +52,39 @@ public final class ActivityGameDetailBinding implements ViewBinding {
   public final TextView tvDetailGenre;
 
   @NonNull
+  public final TextView tvDetailPrice;
+
+  @NonNull
+  public final TextView tvDetailStock;
+
+  @NonNull
   public final TextView tvDetailTitle;
 
-  private ActivityGameDetailBinding(@NonNull ScrollView rootView, @NonNull Button btnBack,
-      @NonNull ImageView ivDetailImage, @NonNull TextView tvDetailDate,
-      @NonNull TextView tvDetailDescription, @NonNull TextView tvDetailDeveloper,
-      @NonNull TextView tvDetailGenre, @NonNull TextView tvDetailTitle) {
+  @NonNull
+  public final TextView tvQuantity;
+
+  private ActivityGameDetailBinding(@NonNull ScrollView rootView, @NonNull Button btnAddToCart,
+      @NonNull Button btnBack, @NonNull Button btnDecreaseQty, @NonNull Button btnEditGame,
+      @NonNull Button btnIncreaseQty, @NonNull ImageView ivDetailImage,
+      @NonNull TextView tvDetailDate, @NonNull TextView tvDetailDescription,
+      @NonNull TextView tvDetailDeveloper, @NonNull TextView tvDetailGenre,
+      @NonNull TextView tvDetailPrice, @NonNull TextView tvDetailStock,
+      @NonNull TextView tvDetailTitle, @NonNull TextView tvQuantity) {
     this.rootView = rootView;
+    this.btnAddToCart = btnAddToCart;
     this.btnBack = btnBack;
+    this.btnDecreaseQty = btnDecreaseQty;
+    this.btnEditGame = btnEditGame;
+    this.btnIncreaseQty = btnIncreaseQty;
     this.ivDetailImage = ivDetailImage;
     this.tvDetailDate = tvDetailDate;
     this.tvDetailDescription = tvDetailDescription;
     this.tvDetailDeveloper = tvDetailDeveloper;
     this.tvDetailGenre = tvDetailGenre;
+    this.tvDetailPrice = tvDetailPrice;
+    this.tvDetailStock = tvDetailStock;
     this.tvDetailTitle = tvDetailTitle;
+    this.tvQuantity = tvQuantity;
   }
 
   @Override
@@ -83,9 +114,33 @@ public final class ActivityGameDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAddToCart;
+      Button btnAddToCart = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddToCart == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       Button btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
+        break missingId;
+      }
+
+      id = R.id.btnDecreaseQty;
+      Button btnDecreaseQty = ViewBindings.findChildViewById(rootView, id);
+      if (btnDecreaseQty == null) {
+        break missingId;
+      }
+
+      id = R.id.btnEditGame;
+      Button btnEditGame = ViewBindings.findChildViewById(rootView, id);
+      if (btnEditGame == null) {
+        break missingId;
+      }
+
+      id = R.id.btnIncreaseQty;
+      Button btnIncreaseQty = ViewBindings.findChildViewById(rootView, id);
+      if (btnIncreaseQty == null) {
         break missingId;
       }
 
@@ -119,14 +174,34 @@ public final class ActivityGameDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvDetailPrice;
+      TextView tvDetailPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvDetailPrice == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDetailStock;
+      TextView tvDetailStock = ViewBindings.findChildViewById(rootView, id);
+      if (tvDetailStock == null) {
+        break missingId;
+      }
+
       id = R.id.tvDetailTitle;
       TextView tvDetailTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvDetailTitle == null) {
         break missingId;
       }
 
-      return new ActivityGameDetailBinding((ScrollView) rootView, btnBack, ivDetailImage,
-          tvDetailDate, tvDetailDescription, tvDetailDeveloper, tvDetailGenre, tvDetailTitle);
+      id = R.id.tvQuantity;
+      TextView tvQuantity = ViewBindings.findChildViewById(rootView, id);
+      if (tvQuantity == null) {
+        break missingId;
+      }
+
+      return new ActivityGameDetailBinding((ScrollView) rootView, btnAddToCart, btnBack,
+          btnDecreaseQty, btnEditGame, btnIncreaseQty, ivDetailImage, tvDetailDate,
+          tvDetailDescription, tvDetailDeveloper, tvDetailGenre, tvDetailPrice, tvDetailStock,
+          tvDetailTitle, tvQuantity);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

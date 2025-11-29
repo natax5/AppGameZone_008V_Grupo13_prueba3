@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_game_detail.xml",
-        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_game_detail.xml"
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_cart.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_cart.xml"
     },
     {
-        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\item_cart.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\item_cart.xml"
     },
     {
-        "merged": "com.example.gamezone.app-mergeDebugResources-35:/layout/item_user_admin.xml",
-        "source": "com.example.gamezone.app-main-38:/layout/item_user_admin.xml"
+        "merged": "com.example.gamezone.app-mergeDebugResources-35:/layout/activity_game_detail.xml",
+        "source": "com.example.gamezone.app-main-38:/layout/activity_game_detail.xml"
     },
     {
         "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\item_game.xml",
@@ -24,6 +24,26 @@
         "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_user_management.xml"
     },
     {
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_add_game.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_add_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_game_detail.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_game_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\item_user_admin.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\item_user_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_main.xml"
+    },
+    {
         "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_admin.xml",
         "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_admin.xml"
     },
@@ -32,7 +52,7 @@
         "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_profile.xml"
     },
     {
-        "merged": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-mergeDebugResources-35:\\layout\\activity_login.xml",
-        "source": "C:\\Users\\revec\\.gradle\\daemon\\8.6\\com.example.gamezone.app-main-38:\\layout\\activity_login.xml"
+        "merged": "com.example.gamezone.app-mergeDebugResources-35:/layout/item_cart.xml",
+        "source": "com.example.gamezone.app-main-38:/layout/item_cart.xml"
     }
 ]

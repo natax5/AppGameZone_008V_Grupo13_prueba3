@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,13 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gamezone.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final LinearLayout adminPanelContainer;
@@ -34,27 +36,31 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnProfile;
 
   @NonNull
+  public final FloatingActionButton fabCart;
+
+  @NonNull
   public final RecyclerView rvGames;
 
   @NonNull
   public final TextView tvWelcome;
 
-  private ActivityMainBinding(@NonNull LinearLayout rootView,
+  private ActivityMainBinding(@NonNull RelativeLayout rootView,
       @NonNull LinearLayout adminPanelContainer, @NonNull Button btnAdminPanel,
-      @NonNull Button btnBack, @NonNull Button btnProfile, @NonNull RecyclerView rvGames,
-      @NonNull TextView tvWelcome) {
+      @NonNull Button btnBack, @NonNull Button btnProfile, @NonNull FloatingActionButton fabCart,
+      @NonNull RecyclerView rvGames, @NonNull TextView tvWelcome) {
     this.rootView = rootView;
     this.adminPanelContainer = adminPanelContainer;
     this.btnAdminPanel = btnAdminPanel;
     this.btnBack = btnBack;
     this.btnProfile = btnProfile;
+    this.fabCart = fabCart;
     this.rvGames = rvGames;
     this.tvWelcome = tvWelcome;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -103,6 +109,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fabCart;
+      FloatingActionButton fabCart = ViewBindings.findChildViewById(rootView, id);
+      if (fabCart == null) {
+        break missingId;
+      }
+
       id = R.id.rvGames;
       RecyclerView rvGames = ViewBindings.findChildViewById(rootView, id);
       if (rvGames == null) {
@@ -115,8 +127,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((LinearLayout) rootView, adminPanelContainer, btnAdminPanel,
-          btnBack, btnProfile, rvGames, tvWelcome);
+      return new ActivityMainBinding((RelativeLayout) rootView, adminPanelContainer, btnAdminPanel,
+          btnBack, btnProfile, fabCart, rvGames, tvWelcome);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

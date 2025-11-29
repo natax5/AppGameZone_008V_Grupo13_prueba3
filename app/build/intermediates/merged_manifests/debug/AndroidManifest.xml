@@ -42,7 +42,9 @@
         <activity android:name="com.example.gamezone.ProfileActivity" />
         <activity android:name="com.example.gamezone.GameDetailActivity" />
         <activity android:name="com.example.gamezone.AdminActivity" />
-        <activity android:name="com.example.gamezone.UserManagementActivity" /> <!-- Agregada la nueva Activity -->
+        <activity android:name="com.example.gamezone.UserManagementActivity" />
+        <activity android:name="com.example.gamezone.AddGameActivity" />
+        <activity android:name="com.example.gamezone.CartActivity" /> <!-- Agregada la nueva Activity -->
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.gamezone.androidx-startup"

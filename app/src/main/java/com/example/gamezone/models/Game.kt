@@ -9,8 +9,10 @@ data class Game(
     val thumbnail: String,
     val genre: String,
     val platform: String,
-    // Campos nuevos para la vista de detalles
     val description: String? = null,
     val developer: String? = null,
-    val release_date: String? = null
+    val release_date: String? = null,
+    val price: Int = 0,
+    val stock: Int = 0,
+    val isLocal: Boolean = false // Para saber si es editable
 ) : Serializable

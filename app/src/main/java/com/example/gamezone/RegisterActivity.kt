@@ -6,13 +6,11 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gamezone.api.ApiClient
-import com.example.gamezone.models.RegisterRequest
-import com.example.gamezone.models.RegisterResponse
+import androidx.lifecycle.lifecycleScope
+import com.example.gamezone.db.AppDatabase
+import com.example.gamezone.db.User
 import com.example.gamezone.utils.Validators
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -48,14 +46,14 @@ class RegisterActivity : AppCompatActivity() {
             val confirmPassword = etConfirmPassword.text.toString().trim()
             val phone = etPhone.text.toString().trim()
             
-            // 1. Validaciones usando clase helper (para facilitar tests unitarios)
+            // Validaciones
             if (!Validators.isValidName(name)) {
                 etName.error = "Nombre inválido (solo letras, máx 100)"
                 return@setOnClickListener
             }
 
             if (!Validators.isValidEmail(email)) {
-                etEmail.error = "Debe ser un correo válido @duoc.cl o @admin.cl (máx 60)"
+                etEmail.error = "Debe ser un correo válido @duoc.cl o @admin.cl"
                 return@setOnClickListener
             }
 
@@ -75,31 +73,26 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // 2. Enviar datos al Microservicio
-            val request = RegisterRequest(
-                fullName = name,
-                email = email,
-                password = password,
-                phone = if (phone.isEmpty()) null else phone,
-                genres = selectedGenres.joinToString(",")
-            )
+            // Registro en Base de Datos Local (Room)
+            lifecycleScope.launch {
+                val db = AppDatabase.getDatabase(applicationContext)
+                val existingUser = db.userDao().getUserByEmail(email)
 
-            ApiClient.instance.register(request).enqueue(object : Callback<RegisterResponse> {
-                override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                    if (response.isSuccessful) {
-                        Toast.makeText(this@RegisterActivity, "Usuario registrado con éxito", Toast.LENGTH_LONG).show()
-                        finish()
-                    } else if (response.code() == 409) {
-                         Toast.makeText(this@RegisterActivity, "El correo ya está registrado", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(this@RegisterActivity, "Error en el registro", Toast.LENGTH_SHORT).show()
-                    }
+                if (existingUser != null) {
+                    Toast.makeText(this@RegisterActivity, "El correo ya está registrado", Toast.LENGTH_SHORT).show()
+                } else {
+                    val newUser = User(
+                        fullName = name,
+                        email = email,
+                        password = password,
+                        phone = if (phone.isEmpty()) null else phone,
+                        genres = selectedGenres.joinToString(",")
+                    )
+                    db.userDao().insertUser(newUser)
+                    Toast.makeText(this@RegisterActivity, "Usuario registrado con éxito", Toast.LENGTH_LONG).show()
+                    finish()
                 }
-
-                override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                    Toast.makeText(this@RegisterActivity, "Fallo de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
-                }
-            })
+            }
         }
     }
 }
